@@ -10,7 +10,6 @@ import sys
 import os
 from django.core.wsgi import get_wsgi_application
 
-sys.path.append("C:/Users/danie/Documents/RTML/RTML")
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'RTML.settings')
 
