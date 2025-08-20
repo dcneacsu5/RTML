@@ -1,0 +1,37 @@
+{% if user.is_authenticated %}
+{% if comm_list != None %}
+<br>
+    <div class="container">
+        <table class="table align-middle table-sm table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th><i class="bi bi-alarm"></i> Hour</th>
+                    <th><i class="bi bi-graph-up-arrow"></i> SL(%)</th>
+                    <th><i class="bi bi-graph-up-arrow"></i> Deviatie(%)</th>
+                    <th><i class="bi bi-graph-up-arrow"></i> Forecast</th>
+                    <th><i class="bi bi-graph-up-arrow"></i> Real</th>
+                    <th><i class="bi bi-graph-up-arrow"></i> AnsThr</th>
+                    <th class="text-center"><i class="bi bi-chat-text"></i> Comment</th>
+                </tr>
+            </thead>
+            <tbody style="font-size:12px;">
+                {% for i,j in interval_dict.items %}
+                <tr>
+                    <td class="text-left align-middle">{{i}}</td>
+
+                    <td class="text-left align-middle">{{ j.0.0 }}</td>
+                    <td>{{ j.1.0 }}</td>
+                    <td>{{ j.2.0 }}</td>
+                    <td>{{ j.3.0 }}</td>
+                    <td>{{ j.4.0 }}</td>
+                    <td><ul style="list-style-type:none">{% for k in j.6 %}
+                        <li class="text-center align-middle">{{ k }}</li>
+                        {% endfor %}</ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endif %}
+{% endif %}

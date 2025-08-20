@@ -1,0 +1,18 @@
+{% if user.is_authenticated %}
+<div class="row">
+    <form method="GET">
+        <div class="row justify-content-end p-1">
+            {{ ff.media }}
+            <div class="col-md-auto">
+                {{ ff.comm_service }}
+            </div>
+            <div class="col-md-auto">
+                {{ ff.comm_timestamp }}
+            </div>
+            <div class="col-md-auto pe-3">
+                <button class="btn btn-outline-success" type="submit">Get Data</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endif %}

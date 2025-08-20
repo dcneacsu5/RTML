@@ -1,0 +1,27 @@
+<nav class="navbar sticky-top bg-dark border-bottom border-body" data-bs-theme="dark">
+  <div class="nav-item">
+    <a class="navbar-brand p-3" href="/"><i class="bi bi-clipboard2-data"></i> Real Time Monitoring Logs</a>
+  </div>
+  {% if user.is_authenticated %}
+    {% if user.groups.all.0.name == 'WFM' %}
+      <button class="nav-item btn btn-outline-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAddComm" aria-controls="offcanvasExample"><i class="bi bi-plus-lg"></i>Add comment</button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAddComm" aria-labelledby="offcanvasAddCommLabel">
+        <div class="offcanvas-header">
+          <h5><i class="bi bi-plus-lg"></i>Add comment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <form method="POST">
+              {% csrf_token %}
+              {{ AddForm }}
+              <button class="btn btn-outline-success input-group" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    {% endif %}
+    <div class="nav-item">
+      <a class="nav-item text-success pe-2"><i class="bi bi-person-circle"></i> {{ user.username }}</a>
+      <a class="nav-item text-success pe-2" href="logout/"><i class="bi bi-door-closed"></i> Logout </a>
+    </div>
+  {% endif %}
+</nav>
