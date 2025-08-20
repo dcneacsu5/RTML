@@ -5,7 +5,7 @@ from .models import rtm_comment, Service,WorkingDays
 # Register your models here.
 @admin.register(rtm_comment)
 class rtm_commentAdmin(admin.ModelAdmin):
-    list_display = ('comm_service','comm_body','comm_author','comm_timestamp',)
+    list_display = ('comm_service','comm_body','comm_author','comm_timestamp')
 
 
 
