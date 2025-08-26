@@ -1,56 +1,65 @@
 # Real Time Monitoring Logs (RTML) – Django App
 
 ## 📌 Overview
-This Django application was created to replace a manual, Excel-based workflow used at my former workplace for logging team actions during the monitoring of call center services.  
 
-Previously, workforce analysts had to:
-- Log monitoring actions into daily Excel files.  
-- Daily add new excel files for the monitored services.  
-- Manage folders for each month’s files.  
-- Archive older files and folders.  
+This Django application was developed to replace a manual, Excel-based workflow previously used for logging team actions during the monitoring of call center services. At my former workplace, workforce analysts were required to:
 
-This was inefficient and time-consuming.  
+- Log monitoring actions into daily Excel files.
+- Add new Excel files daily for the monitored services.
+- Manage folders for each month's files.
+- Archive older files and folders.
 
-The app automates this workflow by:  
-- Using a **Django database** to store monitoring comments.  
-- Connecting to an **external database** to fetch and display key performance indicators (KPIs).  
-- Removing the need to manage multiple Excel files and folders.  
+This process was inefficient and time-consuming.
+
+The RTML app automates this workflow by:
+
+- Utilizing a Django database to store monitoring comments.
+- Connecting to an external database to fetch and display key performance indicators (KPIs).
+- Eliminating the need to manage multiple Excel files and folders.
 
 ---
 
 ## 🚀 Features
-- Store monitoring logs in a structured Django database.  
-- View and analyze team input in one centralized dashboard.  
-- Connect to external databases to automatically fetch KPIs (e.g., service levels, call volumes, forecast).  
-- Archive and retrieve historical data without handling files manually.  
-- **Role-based access**:  
-  - Users in the **WFM group** see an **“Add comment”** button in the navigation bar, allowing them to submit new monitoring entries through an offcanvas form.  
-  - Users not in the **WFM group** have **read-only access**, meaning they can view the monitoring table but cannot add new comments.  
 
+- **Structured Data Storage**: Monitoring logs are stored in a structured Django database.
+- **Centralized Dashboard**: View and analyze team input in one centralized dashboard.
+- **External Database Integration**: Connect to external databases to automatically fetch KPIs (e.g., service levels, call volumes, forecasts).
+- **Historical Data Management**: Archive and retrieve historical data without handling files manually.
+- **Role-Based Access**:
+  - Users in the **WFM group** see an **“Add comment”** button in the navigation bar, allowing them to submit new monitoring entries through an offcanvas form.
+  - Users not in the **WFM group** have **read-only access**, meaning they can view the monitoring table but cannot add new comments.
 
 ---
 
 ## ⚙️ Tech Stack
-- **Backend:** Django (Python)  
-- **Database:** MySQL (with `django-environ` for environment variables)  
-- **Frontend:** Django templates + Bootstrap 4  
-- **External DB connection:** Multiple databases (`default` and `kpi`)  
 
+- **Backend**: Django (Python)
+- **Database**: MySQL (with `django-environ` for environment variables)
+- **Frontend**: Django templates + Bootstrap 4
+- **External DB Connection**: Multiple databases (`default` and `kpi`)
+
+---
 
 ## ⚡ Getting Started
-1. Clone the repository
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/dcneacsu5/RTML.git
+cd RTML
+```
 
 2. Create and activate a virtual environment
+```bash
 python -m venv venv
 source venv/bin/activate  # On Linux/Mac
 venv\Scripts\activate     # On Windows
+```
 
-3. Install dependencies
+4. Install dependencies
 `pip install -r requirements.txt`
 
-4. Configure environment variables
+6. Configure environment variables
 
 This project uses django-environ to manage secrets and database credentials.
 Create a .env file in the project root with the following variables:
@@ -94,10 +103,8 @@ Visit the app at: http://127.0.0.1:8000/
 
 ## 📊 Use Cases
 
-Real-time monitoring of call center KPIs.
-
-Logging workforce management actions and decisions.
-
-Replacing messy Excel file management with a centralized, searchable system.
+- Real-time monitoring of call center KPIs.
+- Logging workforce management actions and decisions.
+- Replacing messy Excel file management with a centralized, searchable system.
 
 ---
