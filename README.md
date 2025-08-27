@@ -121,7 +121,8 @@ Before using the app, you need to define **Working Days** and **Services** in th
      - **Tuesday** → 07:00 - 20:00
      - …and so on for all weekdays.
 4. Save each working day entry.
-<img width="473" height="267" alt="image" src="./docs/images/add_working_days.png" />
+![Add working days](docs/images/add_working_days.png)
+
 
 ### 2. Services
 1. Go to the **Services** model in Django Admin.
@@ -129,13 +130,15 @@ Before using the app, you need to define **Working Days** and **Services** in th
    - **Service Name**
    - **Select the working days** that apply to this service (checkboxes or multiselect depending on your model setup).
 3. Save the service.
-<img width="1580" height="537" alt="image" src="./docs/images/add_new_service.png" />
+![Add new service](docs/images/add_new_service.png)
+
 
 
 > ⚠️ Ensure that each service is assigned the appropriate working days, as the accuracy of the monitoring table relies on this configuration.
 
 If configured correctly, your Django page should look similar to the screenshots below:
-<img width="1916" height="848" alt="image" src="./docs/images/working_example.png" />
+![Working example](docs/images/working_example.png)
+
 
 
 ---
